@@ -1,6 +1,6 @@
 % Elsevier article
-\documentclass[authoryear,preprint,review,12pt]{elsarticle}
-%\documentclass[final,3p,times,twocolumn]{elsarticle}
+%\documentclass[authoryear,preprint,review,12pt]{elsarticle}
+\documentclass[final,3p,times,twocolumn]{elsarticle}
 
 % packages
 \usepackage{amssymb}
@@ -15,8 +15,7 @@
 
 \begin{frontmatter}
 %% Title
-\title{Preconditioning and Dual Timestepping for Detailed Chemical
-Mechanisms}
+\title{Preconditioning for Combustion Problems with Detailed Chemical Mechanisms}
 
 %% MAH
 \author[uofu]{M.A.~Hansen\corref{cor}\fnref{mah}}
@@ -43,9 +42,57 @@ Preconditioning \sep Dual timestepping \sep Chemically reactive flow
 \end{frontmatter}
 
 \section{Introduction}
-\blindtext
+% Introduction
+% --------------
+% + Introduce the simulation problem = stiffness
+%	- Low-Mach
+%	- Combustion
+%	- kinetic vs acoustic vs advective vs diffusive time scales
+% 
+% + Introduce the generic solution methodology = prec. dual timestepping
+%	- Started with the use of timestepping methods for the incompressible and low-Mach number flows 
+%	- Preconditioning introduced or modified acoustic waves to accelerate convergence
+%	- Dual timestepping used to obtian time-accuracy
+%	- Compressible equation set used for all flows
+%	- Chemistry preconditioning has seen very limited effort
+%	- Venkateswaran, 1995 and Sankaran, 2007 (Joe's paper)
+%	- Elmahi, 2008 develops combustion sim. but does not precondition chemistry
+% 
+% + Introduce the specific contribution = our new preconditioners
+%	- We develop new strategies, not just new parameters
+%	- Combustion of hydrogen in a 0-D reactor, full mechanism
+%	- Compare with our implementations of prior preconditioners
+%
+Time-accurate integration of low-Mach combustion is difficult because of
+the inherent stiffness between kinetic, acoustic, advective, and diffusive time
+scales. Tight coupling between high- and low-frequency modes places severe
+constraints on traditional solution techniques, particularly when employing
+highly-detailed chemical reaction mechanisms. 
+
+Preconditioned dual timestepping has enjoyed success as a tool for
+simulation of all-Mach number flows(citations here).
+
+Extension of this methodology to chemically reactive flows has seen little
+development. \citet{Venkateswaran1995} unsuccessfully attempted to apply
+time-derivative scaling of the species equations. \citet{Sankaran2007} consider
+the eigenvalues of a one-step combustion mechanism in developing their
+preconditioning strategy. Their results show success in accelerating
+convergence of a 16-species, 12-reaction mechanism for methane-air combustion.
+In this paper we develop and test new preconditioning heuristics for the
+chemical source terms. We compare results against the preconditioners of
+\citet{Venkateswaran1995, Sankaran2007}.
 
 \section{Conclusions}
 \blindtext
+\blindtext
+
+\section{Acknowledgement}
+\blindtext
+
+\section{References}
+\bibliography{ref.bib}
+\bibliographystyle{elsarticle-num-names}
+
+
 
 \end{document}
