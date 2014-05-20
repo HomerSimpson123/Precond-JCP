@@ -1,20 +1,51 @@
 % Elsevier article
-\documentclass{elsarticle}
+\documentclass[authoryear,preprint,review,12pt]{elsarticle}
+%\documentclass[final,3p,times,twocolumn]{elsarticle}
 
+% packages
+\usepackage{amssymb}
+
+% TODO: remove me later
 \usepackage{blindtext}
+
+% journal
+\journal{Journal of Computational Physics}
 
 \begin{document}
 
+\begin{frontmatter}
+%% Title
+\title{Preconditioning and Dual Timestepping for Detailed Chemical
+Mechanisms}
 
-\section{Title}
+%% MAH
+\author[uofu]{M.A.~Hansen\corref{cor}\fnref{mah}}
+\ead{mike.hansen@chemeng.utah.edu}
+\cortext[cor]{Corresponding author}
 
-\subsection{Subtitle}
+%% JCS
+\author[uofu]{J.C.~Sutherland\fnref{jcs}}
+\ead{james.sutherland@chemeng.utah.edu}
 
+%% UofU
+\address[uofu]{University of Utah, Department of Chemical Engineering, 201
+President's Circle, Salt Lake City, UT 84112}
+
+%% Abstract
+\begin{abstract}
+\blindtext
+\end{abstract}
+
+%% Keywords
+\begin{keyword}
+Preconditioning \sep Dual timestepping \sep Chemically reactive flow
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
 \blindtext
 
-\subsection{Another subtitle}
-
+\section{Conclusions}
 \blindtext
-
 
 \end{document}
